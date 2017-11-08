@@ -7,18 +7,19 @@
 public class CalendarioBasico
 {
     // instance variables - replace the example below with your own
-    private int day;
-    private int month;
-    private int year;
+    private DisplayDosCaracteres day;
+    private DisplayDosCaracteres month;
+    private DisplayDosCaracteres year;
 
     /**
      * Constructor for objects of class CalendarioBasico
      */
     public CalendarioBasico()
     {
-        day = 1;
-        month = 1;
-        year = 1;
+        day = new DisplayDosCaracteres(31);
+        month = new DisplayDosCaracteres(13);
+        year = new DisplayDosCaracteres(2900);
+
     }
 
     /**
@@ -26,15 +27,12 @@ public class CalendarioBasico
      */
     public void avanzarFecha()
     {
-        if(day <31)
-        {day= day + 1;}
-        if(day == 31)
-        {day = 1;
-            month = month + 1;
-        }
-        if(month == 13)
-        {month = 1;
-            year = year +1;
+        day.incrementaValorAlmacenado();
+        if(day.getValorAlmacenado() == 1){
+            month.incrementaValorAlmacenado();
+            if(month.getValorAlmacenado() == 1){
+                year.incrementaValorAlmacenado();
+            }    
         }
     }
 
@@ -43,9 +41,9 @@ public class CalendarioBasico
      */
     public void fijarFecha(int dia, int mes, int ano)
     {
-        day = dia;
-        month = mes;
-        year = ano;
+        day.setValorAlmacenado(dia);
+        month.setValorAlmacenado(mes);
+        year.setValorAlmacenado(ano);  
     }
 
     /**
@@ -53,23 +51,6 @@ public class CalendarioBasico
      */
     public String obtenerFecha()
     {
-        String devolverFecha= "";
-        String parte1 = day + "";
-        String parte2 = month + "";
-        String parte3 = year + "";
-        if(day < 10)
-        {
-            parte1 = "0" + parte1;
-        }
-        if(month < 10)
-        {
-            parte2 = "0" + parte2;
-        }
-        if(year < 10)
-        {
-            parte3 = "0" + parte3;
-        }
-        devolverFecha = parte1 + "-" + parte2 + "-" + parte3 ;
-        return devolverFecha; 
+        return day.getTextoDelDisplay() + "-" +  month.getTextoDelDisplay() + "-" + year.getTextoDelDisplay();
     }
 }
