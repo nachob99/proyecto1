@@ -87,4 +87,9 @@ public class Todoist
             numeroPosicion = numeroPosicion + 1;
         }
     }
+     /**
+     * Muestra solo las tareas en posiciones impares sin numero delante ni nada,
+     * solo la tarea
+     */
+    public void mostrarTareasEnPosicionImpar(){}
     }
