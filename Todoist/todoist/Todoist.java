@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class Todoist here.
  *
@@ -8,49 +8,56 @@
 public class Todoist
 {
     // instance variables - replace the example below with your own
-    private String tarea0;
-    private String tarea1;
-    private String tarea2;
-
+    private ArrayList<String> tareas; 
     /**
      * Constructor for objects of class Todoist
      */
     public Todoist()
     {
-        tarea0 = null;
-        tarea1 = null;
-        tarea2 = null;
-        
+        tareas = new ArrayList<String>();
     }
 
     /**
-     * Añadir tarea en la posicion en la que queremos
+     * Inserta una nueva tarea
      */
-    public void addTarea(String nombreTarea,int posicion)
-    {
-        if(posicion == 0){
-            tarea0 = nombreTarea;
-        }
-        else if(posicion == 1){
-            tarea1 = nombreTarea;
-        }
-        else if(posicion == 2){
-            tarea2 = nombreTarea;
-        }
+    public void addTarea(String nombreTarea){
+        tareas.add(nombreTarea);
     }
+
     /**
      * Muestra por pantalla todas las tareas existentes
      */
     public void mostrarTareas(){
         System.out.println("Tareas existentes:");
-        if(tarea0 !=null){
-            System.out.println(tarea0);
+        System.out.println(tareas);
+    }
+
+    /**
+     * Devuelve el numero de tareas
+     */
+    public int getNumeroTareasPendientes(){
+        return tareas.size();
+    }
+
+    /**
+     * Imprime por pantalla el numero de tareas pendientes
+     */
+    public void mostrarNumeroTareasPendientes(){
+        System.out.println(tareas.size());
+    }
+
+    /** 
+     * Elimina la tarea que ocupa la posicion indicada como
+     * parametro (empezando en 0). devuelve true si la tarea existe,false en caso contrario
+     */
+    public boolean eliminarTarea(int posicionTarea){
+        boolean valorADevolver = true;
+        if(posicionTarea >= 0 && posicionTarea < tareas.size()){
+            tareas.remove(posicionTarea);
         }
-        else if(tarea1 !=null){
-            System.out.println(tarea1);
+        else{
+         return valorADevolver = false;
         }
-        else if(tarea2 !=null){
-            System.out.println(tarea2);
-        }
+        return valorADevolver;
     }
 }
