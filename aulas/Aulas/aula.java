@@ -53,11 +53,14 @@ public class aula
     }
     
     public String getNombreAula(){
-    
         return nombreAula;
     }
     
     public void setNombreAula(String nombreAula){
         this.nombreAula=nombreAula;
+    }
+    
+    public String detallesAula(){
+        return getNombreAula() + "-" + getAula() + "-" + getAlumnos();
     }
 }
