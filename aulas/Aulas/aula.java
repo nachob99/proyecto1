@@ -11,6 +11,7 @@ public class aula
     private String nombreAula;
     private int numeroAula;
     private int numeroAlumnos;
+    private int numeroIndentificativo;
 
     /**
      * Constructor for objects of class aula
@@ -21,6 +22,7 @@ public class aula
         nombreAula="";
         numeroAula=0;
         numeroAlumnos=0;
+        numeroIndentificativo=0;
     }
 
     /**
@@ -29,11 +31,12 @@ public class aula
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void añadirAula(String nombre,int numeroClase,int alumnos)
+    public void añadirAula(String nombre,int numeroClase,int alumnos,int numeroIdentificativo)
     {
        nombreAula=nombre;
        numeroAula=numeroClase;
        numeroAlumnos=alumnos;
+       numeroIndentificativo=numeroIndentificativo;
     }
     
     public int getAula(){
