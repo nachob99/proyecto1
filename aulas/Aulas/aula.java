@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 /**
  * Write a description of class aula here.
  *
@@ -63,7 +64,15 @@ public class aula
         this.nombreAula=nombreAula;
     }
     
+    public int getnumeroIndentificativo(){
+        return numeroIndentificativo;
+    }
+    
+    public void setnumeroIndentificativo(int numeroIndentificativo){  
+        this.numeroIndentificativo=numeroIndentificativo;
+    }
+    
     public String detallesAula(){
-        return getNombreAula() + "-" + getAula() + "-" + getAlumnos();
+        return getNombreAula() + "-" + getAula() + "-" + getAlumnos() + "-" + getnumeroIndentificativo();
     }
 }
