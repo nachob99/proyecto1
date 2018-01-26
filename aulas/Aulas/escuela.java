@@ -49,6 +49,7 @@ public class escuela
         }
 
     }
+
     public void modificarAlumnos(int numIdentificacion ,int nuevosAlumnos){
         int cont=0;
         Aula aulaActual = listaAula.get(numIdentificacion);
@@ -59,8 +60,24 @@ public class escuela
             }
         }
     }
-    
-    
-    
-}
 
+    public void listadoPorNumeroAlumnos(){
+        listaAulaOrdenada = (ArrayList<Aula>) listaAula.clone();
+        while(listaAulaOrdenada.size() !=0 ){
+            Aula aulaConMasAlumnos = listaAulaOrdenada.get(0);
+            if(listaAulaOrdenada.size() >0){
+                for(Aula listaAula : listaAulaOrdenada){
+                    if(listaAula.getAlumnos() >= aulaConMasAlumnos.getAlumnos()){
+                        aulaConMasAlumnos=listaAula;
+
+                    }
+
+                }
+                System.out.println(aulaConMasAlumnos.detallesAula());
+                listaAulaOrdenada.remove(aulaConMasAlumnos);
+            }    
+
+        }
+
+    }
+}
