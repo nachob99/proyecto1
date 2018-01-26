@@ -80,5 +80,22 @@ public class escuela
         }
 
     }
+    
+    public void imprimirPorNombre(){
+        listaAulaOrdenada = (ArrayList<Aula>) listaAula.clone();
+        while(listaAulaOrdenada.size() != 0){
+            
+                Aula aulasPorNombre = listaAulaOrdenada.get(0);
+                for(Aula listaAula : listaAulaOrdenada) {
+                    if (listaAula.getNombreAula().length() <= listaAula.getNombreAula().length()){
+                        aulasPorNombre = listaAula;
+                    }
+                }
+                System.out.println(aulasPorNombre.detallesAula());
+                listaAulaOrdenada.remove(aulasPorNombre);
+            
+        }
+
+    }
 
 }
