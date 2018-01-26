@@ -71,13 +71,14 @@ public class escuela
                         aulaConMasAlumnos=listaAula;
 
                     }
-
+                    System.out.println(aulaConMasAlumnos.detallesAula());
+                    listaAulaOrdenada.remove(aulaConMasAlumnos);
                 }
-                System.out.println(aulaConMasAlumnos.detallesAula());
-                listaAulaOrdenada.remove(aulaConMasAlumnos);
+
             }    
 
         }
 
     }
+
 }
