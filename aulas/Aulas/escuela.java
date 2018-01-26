@@ -49,7 +49,6 @@ public class escuela
         }
 
     }
-
     public void modificarAlumnos(int numIdentificacion ,int nuevosAlumnos){
         int cont=0;
         Aula aulaActual = listaAula.get(numIdentificacion);
@@ -60,6 +59,7 @@ public class escuela
             }
         }
     }
+    
     
     
 }
