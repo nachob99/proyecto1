@@ -1,0 +1,3 @@
+Ciencias # 110 # 30 #
+Letras # 250 # 20 #
+DibujoTecnico # 225 # 23

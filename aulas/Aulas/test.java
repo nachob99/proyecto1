@@ -39,4 +39,19 @@ public class test
     public void tearDown()
     {
     }
+
+    @Test
+    public void Test()
+    {
+        escuela escuela1 = new escuela1();
+        escuela1.añadirAula("EDUCACION", 1, 32, 1);
+        escuela1.añadirAula("Fisica", 32, 50, 14);
+        escuela1.añadirAula("DAM2", 1, 10, 9);
+        escuela1.añadirAula("DAM", 14, 32, 10);
+        escuela1.listarAulas();
+        escuela1.imprimirPorNombre();
+        escuela1.eliminarClase(1);
+        escuela1.listarAulas();
+    }
 }
+
