@@ -26,31 +26,29 @@ public class escuela
         int numIdentificacion = 1;
 
         try {
-            File archivo = new File("nombreArchivo.txt");
+            File archivo = new File("datos.txt");
             Scanner sc = new Scanner(archivo);
-            
+
             while (sc.hasNextLine()) {
-                String [] objeto = sc.nextLine().split(" # ");
-                String nombre = objeto[0];
-                int numeroClase = Integer.parseInt(objeto[1]);
-                int alumnos = Integer.parseInt(objeto[2]);
-                aÃ±adirAula(nombre,numeroClase,alumnos);
-                
+                String[] objeto = sc.nextLine().split(" # ");
+                String nombreAula = objeto[0];
+                int numeroAula = Integer.parseInt(objeto[1]);
+                int numeroAlumnos = Integer.parseInt(objeto[2]);
+                añadirAula(nombreAula,numeroAula,numeroAlumnos);
 
             }
             sc.close();
-        }
+        } 
         catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-
-    public void aÃ±adirAula(String nombre,int numeroClase,int alumnos)
+    public void añadirAula(String nombreAula,int numeroAula,int numeroAlumnos)
     {
-        Aula aulas = new Aula(nombre,numeroClase,alumnos,numIdentificacion);
+        Aula aulas = new Aula(nombreAula,numeroAula,numeroAlumnos,numIdentificacion);
         listaAula.add(aulas);
-        numIdentificacion ++;
+        numIdentificacion++;
     }
 
     public void listarAulas(){
@@ -78,32 +76,13 @@ public class escuela
         int cont=0;
         Aula aulaActual = listaAula.get(numIdentificacion);
         while(numIdentificacion>=0 && cont<listaAula.size()){
-            if(numIdentificacion== aulaActual.getnumeroIndentificativo()){
+            if(numIdentificacion== aulaActual.getnumIdentificacion()){
                 aulaActual.setAlumnos(nuevosAlumnos);
                 cont++;
             }
         }
     }
 
-    public void listadoPorNumeroAlumnos(){
-        listaAulaOrdenada = (ArrayList<Aula>) listaAula.clone();
-        while(listaAulaOrdenada.size() !=0 ){
-            Aula aulaConMasAlumnos = listaAulaOrdenada.get(0);
-            if(listaAulaOrdenada.size() >0){
-                for(Aula listaAula : listaAulaOrdenada){
-                    if(listaAula.getAlumnos() >= aulaConMasAlumnos.getAlumnos()){
-                        aulaConMasAlumnos=listaAula;
-
-                    }
-                    System.out.println(aulaConMasAlumnos.detallesAula());
-                    listaAulaOrdenada.remove(aulaConMasAlumnos);
-                }
-
-            }    
-
-        }
-
-    }
 
     public void imprimirPorNombre(){
         listaAulaOrdenada = (ArrayList<Aula>) listaAula.clone();
@@ -120,6 +99,40 @@ public class escuela
 
         }
 
+    }
+
+    public void ordenarAulaPorAlumnos()
+    {
+        int variable = 0;
+        for (int i = 0; i < listaAula.size(); i++) {
+            Aula aulaConElMayorNumeroDeAlumnos = listaAula.get(i);
+            int posicion = i;
+            for (int j = i + 1; j < listaAula.size(); j++) {
+                Aula aulaActual = listaAula.get(j);
+                if (aulaConElMayorNumeroDeAlumnos.getAlumnos() < aulaActual.getAlumnos()) {
+                    aulaConElMayorNumeroDeAlumnos = aulaActual;
+                    posicion = j;
+                }
+            }
+            if (posicion != i) {                
+                Aula aux = listaAula.get(i);
+                listaAula.set(i, listaAula.get(posicion));
+                listaAula.set(posicion, aux);
+            } 
+
+            if (aulaConElMayorNumeroDeAlumnos.getAlumnos() != variable) {
+                if (aulaConElMayorNumeroDeAlumnos.getAlumnos() == 1) {
+                    System.out.println("");
+                    System.out.println(aulaConElMayorNumeroDeAlumnos.getAlumnos() + " alumnos");
+                }
+                else {
+                    System.out.println("");
+                    System.out.println(aulaConElMayorNumeroDeAlumnos.getAlumnos() + " alumnos");
+                }
+                variable = aulaConElMayorNumeroDeAlumnos.getAlumnos();
+            }
+            System.out.println(aulaConElMayorNumeroDeAlumnos);
+        }    
     }
 
 }
