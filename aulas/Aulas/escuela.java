@@ -124,14 +124,16 @@ public class escuela
                 if (aulaConElMayorNumeroDeAlumnos.getAlumnos() == 1) {
                     System.out.println("");
                     System.out.println(aulaConElMayorNumeroDeAlumnos.getAlumnos() + " alumnos");
+                    System.out.println();
                 }
                 else {
                     System.out.println("");
                     System.out.println(aulaConElMayorNumeroDeAlumnos.getAlumnos() + " alumnos");
+                    System.out.println("");
                 }
                 variable = aulaConElMayorNumeroDeAlumnos.getAlumnos();
             }
-            System.out.println(aulaConElMayorNumeroDeAlumnos);
+            System.out.println(aulaConElMayorNumeroDeAlumnos.detallesAula());
         }    
     }
 
