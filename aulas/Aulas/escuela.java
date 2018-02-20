@@ -83,7 +83,6 @@ public class escuela
         }
     }
 
-
     public void imprimirPorNombre(){
         listaAulaOrdenada = (ArrayList<Aula>) listaAula.clone();
         while(listaAulaOrdenada.size() != 0){
@@ -137,4 +136,40 @@ public class escuela
         }    
     }
 
+    public void ordenarAlfabeticamenteAulasAgrupadasPorAlumnos(){
+     int variable = 0;
+        for (int i = 0; i < listaAula.size(); i++) {
+            Aula aulaConElMayorNumeroDeAlumnos = listaAula.get(i);
+            int posicion = i;
+        for (int j = i + 1; j < listaAula.size(); j++) {
+            Aula aulaActual = listaAula.get(j);
+            if (aulaConElMayorNumeroDeAlumnos.getAlumnos() < aulaActual.getAlumnos()) {
+                aulaConElMayorNumeroDeAlumnos = aulaActual;
+                posicion = j;
+            }
+            else if (aulaConElMayorNumeroDeAlumnos.getAlumnos() == aulaActual.getAlumnos()) {
+                if (aulaConElMayorNumeroDeAlumnos.getNombreAula().compareToIgnoreCase(aulaActual.getNombreAula()) > 0) {
+                    aulaConElMayorNumeroDeAlumnos = aulaActual;  
+                    posicion = j;
+                }
+
+    
+            }
+        }
+        if (aulaConElMayorNumeroDeAlumnos.getAlumnos() != variable) {
+                if (aulaConElMayorNumeroDeAlumnos.getAlumnos() == 1) {
+                    System.out.println("");
+                    System.out.println(aulaConElMayorNumeroDeAlumnos.getAlumnos() + " alumnos");
+                    System.out.println();
+                }
+                else {
+                    System.out.println("");
+                    System.out.println(aulaConElMayorNumeroDeAlumnos.getAlumnos() + " alumnos");
+                    System.out.println("");
+                }
+                variable = aulaConElMayorNumeroDeAlumnos.getAlumnos();
+            }
+            System.out.println(aulaConElMayorNumeroDeAlumnos.detallesAula());
+    }
+}
 }
