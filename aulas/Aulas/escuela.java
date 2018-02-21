@@ -26,7 +26,7 @@ public class escuela
         int numIdentificacion = 1;
 
         try {
-            File archivo = new File("datos.txt");
+            File archivo = new File("nombreArchivo.txt");
             Scanner sc = new Scanner(archivo);
 
             while (sc.hasNextLine()) {
@@ -34,7 +34,7 @@ public class escuela
                 String nombreAula = objeto[0];
                 int numeroAula = Integer.parseInt(objeto[1]);
                 int numeroAlumnos = Integer.parseInt(objeto[2]);
-                añadirAula(nombreAula,numeroAula,numeroAlumnos);
+                ponerAula(nombreAula,numeroAula,numeroAlumnos);
 
             }
             sc.close();
@@ -44,7 +44,7 @@ public class escuela
         }
     }
 
-    public void añadirAula(String nombreAula,int numeroAula,int numeroAlumnos)
+    public void ponerAula(String nombreAula,int numeroAula,int numeroAlumnos)
     {
         Aula aulas = new Aula(nombreAula,numeroAula,numeroAlumnos,numIdentificacion);
         listaAula.add(aulas);
