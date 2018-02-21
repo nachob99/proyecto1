@@ -1,5 +1,5 @@
-Ciencias # 110 # 30 #
-Letras # 250 # 20 #
+Ciencias # 110 # 30
+Letras # 250 # 20
 DibujoTecnico # 225 # 23
 Ciudadania # 225 # 20
 Filosofia 1 # 190 # 24
