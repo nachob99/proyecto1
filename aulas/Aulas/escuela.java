@@ -76,7 +76,7 @@ public class escuela
         int cont=0;
         Aula aulaActual = listaAula.get(numIdentificacion);
         while(numIdentificacion>=0 && cont<listaAula.size()){
-            if(numIdentificacion== aulaActual.getnumIdentificacion()){
+            if(numIdentificacion== aulaActual.getnumeroIndentificativo()){
                 aulaActual.setAlumnos(nuevosAlumnos);
                 cont++;
             }
