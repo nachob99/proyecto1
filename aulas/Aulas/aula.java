@@ -17,13 +17,13 @@ public class aula
     /**
      * Constructor for objects of class aula
      */
-    public aula()
+    public aula(String nombre,int numeroClase,int alumnos,int numeroIdentificativo)
     {
         // initialise instance variables
-        nombreAula="";
-        numeroAula=0;
-        numeroAlumnos=0;
-        numeroIndentificativo=0;
+       this.nombreAula=nombre;
+       this.numeroAula=numeroClase;
+       this.numeroAlumnos=alumnos;
+       this.numeroIndentificativo=numeroIndentificativo;
     }
 
     /**
@@ -32,13 +32,6 @@ public class aula
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void ponerAula(String nombre,int numeroClase,int alumnos,int numeroIdentificativo)
-    {
-       nombreAula=nombre;
-       numeroAula=numeroClase;
-       numeroAlumnos=alumnos;
-       numeroIndentificativo=numeroIndentificativo;
-    }
     
     public int getAula(){
         return numeroAula;
