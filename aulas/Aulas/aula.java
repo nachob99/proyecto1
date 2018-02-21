@@ -32,7 +32,7 @@ public class aula
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void añadirAula(String nombre,int numeroClase,int alumnos,int numeroIdentificativo)
+    public void ponerAula(String nombre,int numeroClase,int alumnos,int numeroIdentificativo)
     {
        nombreAula=nombre;
        numeroAula=numeroClase;
